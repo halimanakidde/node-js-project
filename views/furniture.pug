@@ -1,0 +1,49 @@
+extends layout 
+block content
+    head 
+    title My Company
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='css/furniture.css')
+    .heading
+      h1 Welcome to our Company
+    .paragraph1
+      p We are glad to have you here. Explore our services and offerings.
+    form#furnitureForm(action='/furnitureRegister' method='post'  enctype="multipart/form-data")
+      h2 Furniture Stock Registration
+      .form-row
+        label(for='itemName') Furniture Name
+        input#itemName(type='text' name='furnitureType' placeholder='e.g., Office Desk')
+        label(for='itemName') Furniture Image
+        input#image(type='file' name='furnitureimage' placeholder='upload image')
+        
+
+        label(for='category') Furniture Category
+        select#category(name='category')
+          option(value='') -- Select Category --
+          option(value='Office') Office Furniture
+          option(value='Home') Home Furniture
+          option(value='Outdoor') Outdoor Furniture
+          option(value='Custom') Custom Orders
+        
+      .form-row
+        label(for='material') Wood Type / Material
+        select#material(name='material')
+          option(value='') -- Select Material --
+          option(value='Mahogany') Mahogany
+          option(value='Muvule') Muvule
+          option(value='Teak') Teak
+          option(value='Pine') Pine
+          option(value='Metal') Metal Frame
+          option(value='Glass') Glass / Mixed
+        
+      .form-row
+        label(for='quantity') Quantity
+        input#quantity(type='number' name='quantity' min='1')
+       
+        label(for='price') Unit Price (UGX)
+        input#price(type='number' name='unitprice' min='1')
+       
+        
+        button(type='submit') Register Now
+
+       

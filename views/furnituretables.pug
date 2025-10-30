@@ -1,0 +1,25 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title My Database Info
+  link(rel='stylesheet' href='/css/tables.css')
+h2 Furniture Register
+table.furnituretable
+  tr
+    th Furniture Name
+    th Image
+    th Category
+    th Wood Type
+    th Quantity
+    th Unit Price
+  if Furniture.length > 0
+    each item in Furniture
+      tr
+        td #{item.furnitureType}
+        td 
+          img(src="/"+item.furnitureimage alt="furniture image" width="150px" height="170px") 
+        td #{item.category}
+        td #{item.material}
+        td #{item.quantity}
+        td #{item.unitprice}

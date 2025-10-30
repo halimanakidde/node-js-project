@@ -1,0 +1,151 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #d972b0;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+
+    .navbar ul li a:hover {
+      color: gold;
+    }
+
+    /* Search bar styling */
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 4px;
+      padding: 3px 8px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 5px;
+      font-size: 14px;
+    }
+
+    .search-box button {
+      border: none;
+      background: gold;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .search-box button:hover {
+      background: orange;
+    }
+
+    /* Login button */
+    .login-btn {
+      background-color: gold;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: black;
+      font-weight: bold;
+    }
+
+    .login-btn:hover {
+      background-color: orange;
+    }
+
+    /* Right side container for search and login */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Form styling */
+   /* form {
+      width: 360px;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    } */
+    h2 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: 3px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background-color: #d4af37; /* gold */
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c5a027;
+    }
+
+    /* .form-row {
+      margin-bottom: 5px;
+      display: flex;
+        flex-direction: row;
+        gap: 5px;}
+         */
+    
+    .form-row {
+    display: flex;
+    gap: 20px;         /* space between inputs */
+    margin-bottom: 10px;
+  }
+  .form-row > div {
+    flex: 1;           /* make both inputs equal width */
+  }
+
+  

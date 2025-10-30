@@ -1,0 +1,55 @@
+extends layout 
+block content
+  head 
+   title My Company
+  link(rel='stylesheet' href='css/style.css')
+  .heading
+    h1 Welcome to our Company
+  .paragraph1
+    p We are glad to have you here. Explore our services and offerings.
+  .row
+    .column
+      .card
+        img(src='./images/living1.jpeg' alt='living room' style='width: 100%')
+        p
+          button Add to Cart
+    .column
+      .card
+        img(src='./images/living2.jpeg' alt='furniture' style='width: 100%')
+        p
+          button.card_btn Add to Cart
+    .column
+      .card
+        img(src='./images/liv4.jpeg' alt='living room' style='width: 100%')
+        p
+          button Add to Cart
+          button.card_btn Contact Us Today on 0772123456
+    .column
+      .card
+        img(src='./images/liv3.jpeg' alt='furniture' style='width: 100%')
+        p
+          button Add to Cart
+    .column
+      .card
+        img(src='./images/liv4.jpeg' alt='furniture' style='width: 100%')
+        p
+          button Add to Cart
+  .services
+    h2 &#x1FA91; Our Furniture Services
+    p
+      | At Mayondo Wood &amp; Furniture Ltd, we take pride in offering a
+      | comprehensive range of furniture solutions tailored to meet the needs of
+      | both residential and commercial clients. Our services combine
+      | craftsmanship, creativity, and quality materials to deliver furniture
+      | that is both functional and elegant.
+  footer
+    .footer-content
+      p &copy; 2025 MAYONDO WOOD AND FURNITURE. All rights reserved.
+      .social-icons
+        a(href='#') Facebook
+        |  | 
+        a(href='#') Twitter
+        |  |
+        a(href='#') LinkedIn
+  script(src='login.js')
+  script(src='signup.js')

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mayondo Furniture | Sales Dashboard</title>
+  <link rel="stylesheet" href="sales.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <h2>Mayondo<br>Furniture</h2>
+      <ul class="menu">
+        <li><a href="#">🏠 Dashboard</a></li>
+        <li><a href="#">📊 Sales Report</a></li>
+        <li><a href="#">🪑 Products</a></li>
+        <li><a href="#">🧾 New Sale</a></li>
+      </ul>
+      <div class="auth">
+        <button id="loginBtn">Login</button>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1>Sales Executive Dashboard</h1>
+        <p>Welcome, <span id="username">John Doe</span></p>
+      </header>
+
+      <section class="cards">
+        <div class="card">
+          <h3>Today's Sales</h3>
+          <p>UGX 1,200,000</p>
+        </div>
+        <div class="card">
+          <h3>Weekly Sales</h3>
+          <p>UGX 7,850,000</p>
+        </div>
+        <div class="card">
+          <h3>Monthly Sales</h3>
+          <p>UGX 32,000,000</p>
+        </div>
+      </section>
+
+      <section class="table-section">
+        <h2>Recent Sales</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Amount (UGX)</th>
+              <th>Customer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-10-29</td>
+              <td>Wooden Chair</td>
+              <td>3</td>
+              <td>450,000</td>
+              <td>Mary N.</td>
+            </tr>
+            <tr>
+              <td>2025-10-28</td>
+              <td>Dining Table</td>
+              <td>1</td>
+              <td>1,200,000</td>
+              <td>Sam K.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

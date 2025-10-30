@@ -1,0 +1,26 @@
+
+.furnituretable {
+  width: 80%;
+  border-collapse: collapse;
+  background-color: white;
+  justify-content: center;
+}
+
+.furnituretable th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.furnituretable th {
+  background-color: #b8bcb6;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+

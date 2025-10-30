@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Registration</title>
+    <link rel="stylesheet" href="services.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+ </head>
+ <body>
+   <nav class="navbar1">
+    Email us Today:
+    <a href="#"><ul>mayondowf@gmail.com</ul></a>
+    <a href="#">Register</a>
+      <a href="#">Sign In</a>
+        <a href="#">Chat</a>
+      <a href="#" class="cart">shopNow</a>
+    We delivery to your door step.....
+  </nav>
+
+  
+  <nav class="navbar">
+    <div class="logo">MAYONDO WOOD AND FURNITURE</div>
+
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="dropdown">
+        <a href="#">Admin ▼</a>
+        <div class="dropdown-content">
+          <a href="furniture.html">Furniture Registration</a>
+          <a href="woodreg.html">Wood Registration</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <button>Go</button>
+      </div>
+      <a href="login.html"><button class="login-btn">Login</button></a>
+    </div>
+  </nav>
+
+   <div class="heading"> <h1>Welcome to our Company</h1></div>
+
+    <div class="paragraph1"><p>We are glad to have you here. Explore our services and offerings.</p></div>
+
+    <form id="furnitureForm">
+    <h2>Furniture Stock Registration</h2>
+<div class="form-row">
+    <label for="itemName">Furniture Name</label>
+    <input type="text" id="itemName" placeholder="e.g., Console Table">
+    <div id="itemNameError" class="error"></div>
+
+    <label for="category">Furniture Category</label>
+    <select id="category">
+      <option value="">-- Select Category --</option>
+      <option value="Office">Office Furniture</option>
+      <option value="Home">Home Furniture</option>
+      <option value="Outdoor">Outdoor Furniture</option>
+      <option value="Custom">Custom Orders</option>
+    </select>
+    <div id="categoryError" class="error"></div>
+    </div>
+
+
+<div class="form-row">
+    <label for="material">Wood Type / Material</label>
+    <select id="material">
+      <option value="">-- Select Material --</option>
+      <option value="Mahogany">Mahogany</option>
+      <option value="Muvule">Muvule</option>
+      <option value="Teak">Teak</option>
+      <option value="Pine">Pine</option>
+      <option value="Metal">Metal Frame</option>
+      <option value="Glass">Glass / Mixed</option>
+    </select>
+    <div id="materialError" class="error"></div>
+    </div>
+
+    <div class="form-row">
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" min="1">
+    <div id="quantityError" class="error"></div>
+
+    <label for="price">Unit Price (UGX)</label>
+    <input type="number" id="price" min="1">
+    <div id="priceError" class="error"></div>
+
+    <label for="location">Storage/ Warehouse Location</label>
+    <input type="text" id="location" placeholder="e.g., Warehouse A - Ndeeba">
+    <div id="locationError" class="error"></div>
+<!-- </div>
+<div class="remarks-section">
+    <label for="remarks">Additional Remarks</label>
+    <textarea id="remarks" rows="3" placeholder="Optional notes..."></textarea>
+</div> -->
+    <button type="submit">Register</button>
+    </div>
+  </form>
+
+  <footer>
+  <div class="footer-content">
+
+    <div class="footer-section about">
+      <p>&copy; 2025 MAYONDO WOOD AND FURNITURE. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#">Facebook</a> |
+        <a href="#">Twitter</a> |
+        <a href="#">LinkedIn</a>
+        <div class="contact-info">
+        <h3>Our Address</h3>
+        <p>Mayondo Wood and Furniture Ltd<br>
+        Plot 45, Malangala Road, Kampala, Uganda</p>
+
+        <h3>Email</h3>
+        <p><a href="mailto:mayondowf@gmail.com">mayondowf@gmail.com</a></p>
+
+        <h3>Phone</h3>
+        <p>+256 700 123 456 | +256 772 789 101</p>
+
+        <h3>Business Hours</h3>
+        <p>Mon - Sat: 8:00 AM - 6:00 PM<br>Sunday: Closed</p>
+      </div>
+      </div>
+    </div>
+
+    <div class="footer-section quick-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#">Doors</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Living Room</a></li>
+        <li><a href="#">Bedroom</a></li>
+        <li><a href="#">Kitchens</a></li>
+        <li><a href="#">Dining Room</a></li>
+        <li><a href="#">Bar Furniture</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+
+
+    </body>
+</html>

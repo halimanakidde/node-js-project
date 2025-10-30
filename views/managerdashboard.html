@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mayondo Furniture | Manager Dashboard</title>
+  <link rel="stylesheet" href="manager.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Mayondo<br>Furniture</h2>
+      <ul class="menu">
+        <li><a href="#" class="active">🏠 Home</a></li>
+        <li><a href="#">🌲 Register Wood Stock</a></li>
+        <li><a href="#">🪑 Register Furniture Stock</a></li>
+        <li><a href="#">📊 Monitor Sales</a></li>
+      </ul>
+      <div class="auth">
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1>Manager Dashboard</h1>
+        <p>Welcome back, <strong>Manager</strong></p>
+      </header>
+
+      <!-- Section 1: Summary Cards -->
+      <section class="cards">
+        <div class="card">
+          <h3>Total Furniture Stock</h3>
+          <p>124 items</p>
+        </div>
+        <div class="card">
+          <h3>Total Wood Stock</h3>
+          <p>53 logs</p>
+        </div>
+        <div class="card">
+          <h3>Today's Sales</h3>
+          <p>UGX 2,450,000</p>
+        </div>
+      </section>
+
+      <!-- Section 2: Register Forms -->
+      <section class="register-section">
+        <h2>Register New Stock</h2>
+        <div class="form-container">
+          <!-- Wood Registration Form -->
+          <form id="woodForm">
+            <h3>🌲 Register Wood Stock</h3>
+            <label>Wood Type:</label>
+            <input type="text" placeholder="e.g. Mahogany" required />
+            <label>Quantity (Logs):</label>
+            <input type="number" placeholder="e.g. 10" required />
+            <label>Price Per Unit:</label>
+            <input type="text" placeholder="e.g.5000 UGX" required />
+            <label>Date Received:</label>
+            <input type="date" required />
+            <button type="submit">Save Wood Stock</button>
+          </form>
+
+          <!-- Furniture Registration Form -->
+          <form id="furnitureForm">
+            <h3>🪑 Register Furniture Stock</h3>
+            <label>Furniture Type:</label>
+            <input type="text" placeholder="e.g. Office Chair" required />
+            <label>Quantity:</label>
+            <input type="number" placeholder="e.g. 5" required />
+            <label>Date Produced:</label>
+            <input type="date" required />
+            <button type="submit">Save Furniture Stock</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Section 3: Sales Monitoring Table -->
+      <section class="sales-section">
+        <h2>📊 Monitor Sales (Who Sold What, When)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Sales Executive</th>
+              <th>Item Sold</th>
+              <th>Quantity</th>
+              <th>Amount (UGX)</th>
+              <th>Customer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-10-30</td>
+              <td>Jane A.</td>
+              <td>Wooden Bed</td>
+              <td>1</td>
+              <td>1,200,000</td>
+              <td>Mr. Owor</td>
+            </tr>
+            <tr>
+              <td>2025-10-29</td>
+              <td>Samuel K.</td>
+              <td>Office Desk</td>
+              <td>2</td>
+              <td>1,500,000</td>
+              <td>ABC Limited</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="manager-dashboard.js"></script>
+</body>
+</html>

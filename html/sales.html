@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Management</title>
+  <link rel="stylesheet" href="services.css">
+</head>
+<body>
+
+  <h1>Sales Management Dashboard</h1>
+
+  <!-- DAILY SALES ENTRY FORM -->
+  <section>
+    <h2>Daily Sales Entry Form</h2>
+    <form action="#" method="POST" class="sales-form">
+      <label for="salesId">Sales ID:</label>
+      <input type="text" id="salesId" name="salesId" placeholder="Enter sales ID" required>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="customer">Customer Name:</label>
+      <input type="text" id="customer" name="customer" placeholder="Enter customer name" required>
+
+      <label for="item">Item Sold:</label>
+      <input type="text" id="item" name="item" placeholder="Enter item name" required>
+
+      <label for="category">Category:</label>
+      <select id="category" name="category" required>
+        <option value="">-- Select Category --</option>
+        <option value="Furniture">Furniture</option>
+        <option value="Wood">Wood</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" min="1" required>
+
+      <label for="unitPrice">Unit Price (UGX):</label>
+      <input type="number" id="unitPrice" name="unitPrice" min="0" required>
+
+      <label for="salesperson">Salesperson:</label>
+      <input type="text" id="salesperson" name="salesperson" placeholder="Enter salesperson name" required>
+
+      <button type="submit">Record Sale</button>
+    </form>
+  </section>
+
+  <hr>
+
+  <!-- WEEKLY SALES REPORT -->
+  <section>
+    <h2>Weekly Sales Report</h2>
+    <table class="furnituretable">
+      <tr>
+        <th>Week</th>
+        <th>Total Furniture Sales (UGX)</th>
+        <th>Total Wood Sales (UGX)</th>
+        <th>Overall Total (UGX)</th>
+      </tr>
+      <tr>
+        <td>Week 1 (Oct 1 - Oct 7)</td>
+        <td>6,800,000</td>
+        <td>2,100,000</td>
+        <td>8,900,000</td>
+      </tr>
+      <tr>
+        <td>Week 2 (Oct 8 - Oct 14)</td>
+        <td>7,200,000</td>
+        <td>1,900,000</td>
+        <td>9,100,000</td>
+      </tr>
+      <tr>
+        <td>Week 3 (Oct 15 - Oct 21)</td>
+        <td>9,900,000</td>
+        <td>5,800,000</td>
+        <td>15,700,000</td>
+      </tr>
+      <tr class="total-row">
+        <td style="text-align:right; font-weight:bold;">Weekly Average:</td>
+        <td colspan="3" style="font-weight:bold;">11,233,000</td>
+      </tr>
+    </table>
+  </section>
+
+  <hr>
+
+  <!-- MONTHLY SALES REPORT -->
+  <section>
+    <h2>Monthly Sales Report</h2>
+    <table class="furnituretable">
+      <tr>
+        <th>Month</th>
+        <th>Furniture Sales (UGX)</th>
+        <th>Wood Sales (UGX)</th>
+        <th>Total Sales (UGX)</th>
+        <th>Top Salesperson</th>
+      </tr>
+      <tr>
+        <td>September 2025</td>
+        <td>21,500,000</td>
+        <td>8,400,000</td>
+        <td>29,900,000</td>
+        <td>Sarah K.</td>
+      </tr>
+      <tr>
+        <td>October 2025</td>
+        <td>25,600,000</td>
+        <td>11,700,000</td>
+        <td>37,300,000</td>
+        <td>James M.</td>
+      </tr>
+      <tr>
+        <td>November 2025</td>
+        <td>19,000,000</td>
+        <td>9,000,000</td>
+        <td>28,000,000</td>
+        <td>Sarah K.</td>
+      </tr>
+      <tr class="total-row">
+        <td style="text-align:right; font-weight:bold;">Quarter Total:</td>
+        <td colspan="3" style="font-weight:bold;">95,200,000</td>
+        <td></td>
+      </tr>
+    </table>
+  </section>
+
+</body>
+</html>

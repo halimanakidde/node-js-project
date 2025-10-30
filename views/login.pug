@@ -1,0 +1,21 @@
+extends layout 
+block content
+  head 
+    title My Company
+    link(rel='stylesheet' href='css/style.css')
+  .heading
+    h1 Welcome to our Company
+  .paragraph1
+    p We are glad to have you here. Explore our services and offerings.
+  .login-container
+    h3 Enter your credentials
+    form#loginForm(action='/login' method='post')
+      label(for='email') Email
+      input#emailAddress(type='text' name='email')
+      br
+      label(for='password') Password
+      input#password(type='password' name='password')
+      br
+      button(type="submit") LOGIN 
+      br
+    //- script(src='signup.js')

@@ -1,0 +1,140 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wood Registration</title>
+    <link rel="stylesheet" href="services.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+ </head>
+ <body>
+
+   <nav class="navbar1">
+    Email us Today:
+    <a href="#"><ul>mayondowf@gmail.com</ul></a>
+    <a href="#">Register</a>
+      <a href="#">Sign In</a>
+        <a href="#">Chat</a>
+      <a href="#" class="cart">shopNow</a>
+    We delivery to your door step.....
+  </nav>
+    
+  <nav class="navbar">
+    <div class="logo">MAYONDO WOOD AND FURNITURE</div>
+
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+   <li class="dropdown">
+        <a href="#">Admin ▼</a>
+        <div class="dropdown-content">
+          <a href="furniture.html">Furniture Registration</a>
+          <a href="woodreg.html">Wood Registration</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <button>Go</button>
+      </div>
+      <a href="login.html"><button class="login-btn">Login</button></a>
+    </div>
+  </nav>
+
+
+   <div class="heading"> <h1>Welcome to our Company</h1></div>
+
+    <div class="paragraph1"><p>We are glad to have you here. Explore our services and offerings.</p></div>
+    
+<form id="woodForm">
+    <h2>Wood Stock Registration</h2>
+
+    <label for="woodType">Wood Type</label>
+    <select id="woodType">
+      <option value="">-- Select Wood Type --</option>
+      <option value="Mahogany">Mahogany</option>
+      <option value="Muvule">Muvule</option>
+      <option value="Pine">Pine</option>
+      <option value="Teak">Teak</option>
+      <option value="Eucalyptus">Eucalyptus</option>
+    </select>
+    <div id="woodTypeError" class="error"></div>
+
+    <label for="quantity">Quantity (pieces)</label>
+    <input type="number" id="quantity" min="1">
+    <div id="quantityError" class="error"></div>
+
+    <label for="price">Price per Piece (UGX)</label>
+    <input type="number" id="price" min="1">
+    <div id="priceError" class="error"></div>
+
+    <label for="supplier">Supplier Name</label>
+    <input type="text" id="supplier">
+    <div id="supplierError" class="error"></div>
+
+    <label for="contact">Supplier Contact</label>
+    <input type="text" id="contact">
+    <div id="contactError" class="error"></div>
+
+    <label for="location">Storage/ WareHouse Location</label>
+    <input type="text" id="location">
+    <div id="locationError" class="error"></div>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <footer>
+  <div class="footer-content">
+
+    <div class="footer-section about">
+      <p>&copy; 2025 MAYONDO WOOD AND FURNITURE. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#">Facebook</a> |
+        <a href="#">Twitter</a> |
+        <a href="#">LinkedIn</a>
+        <div class="contact-info">
+        <h3>Our Address</h3>
+        <p>Mayondo Wood and Furniture Ltd<br>
+        Plot 45, Malangala Road, Kampala, Uganda</p>
+
+        <h3>Email</h3>
+        <p><a href="mailto:mayondowf@gmail.com">mayondowf@gmail.com</a></p>
+
+        <h3>Phone</h3>
+        <p>+256 700 123 456 | +256 772 789 101</p>
+
+        <h3>Business Hours</h3>
+        <p>Mon - Sat: 8:00 AM - 6:00 PM<br>Sunday: Closed</p>
+      </div>
+      </div>
+    </div>
+
+    <div class="footer-section quick-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#">Doors</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Living Room</a></li>
+        <li><a href="#">Bedroom</a></li>
+        <li><a href="#">Kitchens</a></li>
+        <li><a href="#">Dining Room</a></li>
+        <li><a href="#">Bar Furniture</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+<script src="woodreg.js"></script>
+ </body>
+ </html>
+ 
+ 

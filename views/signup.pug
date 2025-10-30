@@ -1,0 +1,30 @@
+extends layout 
+block content
+  head 
+    title My Company
+    link(rel='stylesheet' href='css/style.css')
+  .heading
+    h1 Welcome to our Company
+  .paragraph1
+    p We are glad to have you here. Explore our services and offerings.
+  .login-container
+    h3 Enter your credentials
+    form#loginForm(action='/register' method='post')
+      label(for='fullname') FullName
+      input#Username(type='text' name='fullname')
+      br
+      label(for='email') Email
+      input#emailAddress(type='text' name='email')
+      br
+      label(for='password') Password
+      input#password(type='password' name='password')
+      br
+      label(for='role')  select Role: 
+      select#userRole(name="role") 
+        option(value="") Select role
+        option(value="manager") Manager 
+        option(value="salesexecutive") Sales Executive 
+      br
+      button(type="submit") Register  
+      br
+    //- script(src='signup.js')
