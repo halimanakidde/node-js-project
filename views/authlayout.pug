@@ -1,0 +1,48 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  //- title My Company
+  //- link(rel='stylesheet' href='css/style.css')
+nav.navbar
+  .logo MAYONDO WOOD AND FURNITURE
+  .nav-right
+      .search-box
+        input(type='text' placeholder='Search...')
+        button Go
+        a(href='/login')
+        button.login-btn Login
+      li
+        a(href='/register') Signup
+  if currentUser && currentUser.role = 'manager' 
+    ul
+      li
+        a(href='/') Home
+      li
+        a(href='/servicePage') Services
+      li.dropdown
+        a(href='#') Stock
+        .dropdown-content
+          a(href='/furnitureRegister') Add Furniture Stock
+          a(href='/woodRegister') Add Wood Stock
+      li 
+        a(href='/woodRegistered') View Wood Stock 
+      li 
+        a(href='/furnitureRegistered') View Furniture Stock
+      li 
+        a(href='#') View Sales
+      li 
+        a(href='/logout') Logout 
+  if currentUser && currentUser.role = 'salesexecutive'
+    ul   
+      li
+        a(href='/') Home
+      li 
+        a(href='/woodRegistered') View Wood Stock 
+      li 
+        a(href='/furnitureRegistered') View Furniture Stock
+      li 
+        a(href='#') View Sales
+      li 
+        a(href='/logout') Logout       
+block content    

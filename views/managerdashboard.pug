@@ -1,0 +1,78 @@
+extends authlayout 
+block content
+head
+  title Manager Dashboard
+  link(rel='stylesheet' href='manager.css')
+    h2 Mayondo Furniture
+  // Main Content
+  main.main-content
+    header
+      h1 Manager Dashboard
+      p
+        | Welcome back, 
+        strong Manager
+    // Section 1: Summary Cards
+    section.cards
+      .card
+        h3 Total Furniture Stock
+        p 124 items
+      .card
+        h3 Total Wood Stock
+        p 53 logs
+      .card
+        h3 Today&apos;s Sales
+        p UGX 2,450,000
+    // Section 2: Register Forms
+    section.register-section
+      h2 Register New Stock
+      .form-container
+        // Wood Registration Form
+        form#woodForm
+          h3 &#x1F332; Register Wood Stock
+          label Wood Type:
+          input(type='text' placeholder='e.g. Mahogany' required='')
+          label Quantity (Logs):
+          input(type='number' placeholder='e.g. 10' required='')
+          label Price Per Unit:
+          input(type='text' placeholder='e.g.5000 UGX' required='')
+          label Date Received:
+          input(type='date' required='')
+          button(type='submit') Save Wood Stock
+        // Furniture Registration Form
+        form#furnitureForm
+          h3 &#x1FA91; Register Furniture Stock
+          label Furniture Type:
+          input(type='text' placeholder='e.g. Office Chair' required='')
+          label Quantity:
+          input(type='number' placeholder='e.g. 5' required='')
+          label Date Produced:
+          input(type='date' required='')
+          button(type='submit') Save Furniture Stock
+    // Section 3: Sales Monitoring Table
+    section.sales-section
+      h2 &#x1F4CA; Monitor Sales (Who Sold What, When)
+      table
+        thead
+          tr
+            th Date
+            th Sales Executive
+            th Item Sold
+            th Quantity
+            th Amount (UGX)
+            th Customer
+        tbody
+          tr
+            td 2025-10-30
+            td Jane A.
+            td Wooden Bed
+            td 1
+            td 1,200,000
+            td Mr. Owor
+          tr
+            td 2025-10-29
+            td Samuel K.
+            td Office Desk
+            td 2
+            td 1,500,000
+            td ABC Limited
+script(src='manager-dashboard.js')

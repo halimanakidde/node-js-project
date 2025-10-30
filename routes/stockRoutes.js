@@ -74,10 +74,12 @@ res.redirect('/furnitureRegister');//redirect to a route path not to a file
     }
  });
 
- router.get('/managerDashboard', (req,res)=>{
-
+ router.get('/managerDashBoard', (req,res)=>{
+    res.render("managerdashboard", {current: req.session.user})
  });
 
-
+ router.get('/salesDashBoard', (req,res)=>{
+    res.render("salesdashboard", {current: req.session.user})
+ });
 
 module.exports=router;
