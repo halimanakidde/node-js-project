@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const furniturestockSchema = new mongoose.Schema({
-    furnitureType:{
+    furniturename:{
         type: String,
     },
     furnitureimage:{
@@ -15,6 +15,9 @@ const furniturestockSchema = new mongoose.Schema({
     },
     quantity:{
         type: Number,
+    },
+     date:{
+        type: Date,
     },
     unitprice:{
         type: Number

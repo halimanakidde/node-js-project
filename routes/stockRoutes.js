@@ -63,6 +63,39 @@ res.redirect('/furnitureRegister');//redirect to a route path not to a file
     }
  });
 
+ //route for updating furniture/ get furniture stock to update
+ router.get('/furniture/:id', async(req,res)=>{
+    try {
+        const furnitureUpdate = await furnitureStock.findOne({_id:req.params.id});
+        res.render('update_furniture', {item:furnitureUpdate})
+    } catch (error) {
+      res.status(400).send('Unable to find item in the database')
+      console.log(error);  
+    }
+ });
+
+ //route for updating furniture/ get furniture stock to update
+ router.post('/furniture', async(req,res)=>{
+    try {
+        await furnitureStock.findByIdAndUpdate({_id:req.query.id}, req.body);
+        res.redirect('/furnitureRegistered')
+    } catch (error) {
+      res.status(400).send('Unable to update furniture in the database')
+      console.log(error);  
+    }
+ });
+
+ //route for deleting furniture 
+ router.post('/deletefurniture', async(req,res)=>{
+    try {
+        await furnitureStock.deleteOne({_id:req.body.id}, req.body);
+        res.redirect('/furnitureRegistered')
+    } catch (error) {
+      res.status(400).send('Unable to update furniture in the database')
+      console.log(error);  
+    }
+ });
+
  //route for getting wood registered from the database
  router.get('/woodRegistered', async(req,res)=>{
     try {
@@ -74,12 +107,10 @@ res.redirect('/furnitureRegister');//redirect to a route path not to a file
     }
  });
 
- router.get('/managerDashBoard', (req,res)=>{
-    res.render("managerdashboard", {current: req.session.user})
- });
+ 
 
- router.get('/salesDashBoard', (req,res)=>{
-    res.render("salesdashboard", {current: req.session.user})
- });
+
+ 
+
 
 module.exports=router;

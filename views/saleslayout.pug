@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Sales Executive Dashboard
+    link(rel='stylesheet' href='/css/sales.css')
+  body
+    .sidebar
+      .logo
+        h2 MAYONDO WOOD AND FURNITURE
+      .search-box
+        input(type='text' placeholder='Search...')
+        button Go
+      ul.nav-links
+        li
+          a(href='/') Home
+        li
+          a(href='/woodRegistered') View Wood Stock
+        li
+          a(href='/furnitureRegistered') View Furniture Stock
+        li
+          a(href='/recordwoodSale') Add Wood sale
+        li
+          a(href='#') Add Furniture Sale
+        li
+          a(href='#') View Sales
+        li
+          a(href='/logout') Logout
+    .main-content
+      .topbar
+        h1 Dashboard Overview
+        .user-info
+        if currentUser && (currentUser.role == 'salesexecutive')
+            a(href='/login')
+              button.login-btn Login
+            a(href='/register')
+              button.signup-btn Signup
+        //-   if !currentUser
+        //-   else
+        //-     span Welcome #{currentUser.name || 'Sales Executive'}
+    block content

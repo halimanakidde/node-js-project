@@ -1,47 +1,24 @@
-extends authlayout 
+extends saleslayout 
 block content
-head
-  title Sales Dashboard
-  link(rel='stylesheet' href='sales.css')
-    h2 Mayondo Furniture
-  // Main Content
-  main.main-content
-    header
-      h1 Sales Executive Dashboard
-      p
-        | Welcome, 
-        span#username John Doe
-    section.cards
-      .card
-        h3 Today&apos;s Sales
-        p UGX 1,200,000
-      .card
-        h3 Weekly Sales
-        p UGX 7,850,000
-      .card
-        h3 Monthly Sales
-        p UGX 32,000,000
-    section.table-section
-      h2 Recent Sales
-      table
-        thead
-          tr
-            th Date
-            th Item
-            th Quantity
-            th Amount (UGX)
-            th Customer
-        tbody
-          tr
-            td 2025-10-29
-            td Wooden Chair
-            td 3
-            td 450,000
-            td Mary N.
-          tr
-            td 2025-10-28
-            td Dining Table
-            td 1
-            td 1,200,000
-            td Sam K.
-script(src='dashboard.js')
+  head
+    title Sales Dashboard
+    link(rel='stylesheet' href='/public/css/sales.css')
+    main.main-content
+      header
+        h1 Sales Executive Dashboard
+        p
+          | Welcome, 
+          span#username John Doe
+      section.cards
+        .card
+          h3 Today&apos;s Sales
+          p UGX 1,200,000
+        .card
+          h3 Weekly Sales
+          p UGX 7,850,000
+        .card
+          h3 Monthly Sales
+          p UGX 32,000,000
+      section.table-section
+        h2 Recent Sales    
+  //- script(src='dashboard.js')

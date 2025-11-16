@@ -17,6 +17,7 @@ const Registration=require('./models/Registration')
 const indexRoutes=require('./routes/indexRoutes');
 const stockRoutes=require('./routes/stockRoutes');
 const authRoutes=require('./routes/authRoutes');
+const salesRoutes=require('./routes/salesRoutes');
 
 //2. instantiations
 const app=express();//creating an express application
@@ -38,9 +39,16 @@ app.set('view engine', 'pug');//setting pug as the view engine
 app.set('views', path.join(__dirname, 'views',));//specifying views directory
 
 //4. middleware
+app.use(expressSession);
 app.use(express.urlencoded({extended: false}));//middleware to parse urlencoded request bodies 
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/public/images/uploads', express.static(__dirname + '/public/images/uploads'));
+
+//global variables to be accessec by all views
+app.use((req, res, next)=>{
+    res.locals.currentUser = req.session.user;
+    next();
+})
 
 //express session configs
 app.use(expressSession);
@@ -56,6 +64,7 @@ passport.deserializeUser(Registration.deserializeUser());
 app.use('/', indexRoutes);//using imported route
 app.use('/', stockRoutes);// always use full route path
 app.use('/', authRoutes);
+app.use('/', salesRoutes);
 
 
  //non existing routes

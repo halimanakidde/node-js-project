@@ -1,10 +1,22 @@
 const mongoose = require('mongoose');
 
 const woodstockSchema = new mongoose.Schema({
-    woodtype:{
+    woodName:{
         type:String,
     },
-    quantity:{
+    woodType:{
+        type:String,
+    },
+    woodcolor:{
+        type:String,
+    },
+    measurements:{
+        type:String,
+    },
+    quality:{
+        type:String,
+    },
+        quantity:{
         type:Number,
     },
     unitprice:{

@@ -1,0 +1,56 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Sales Form 
+  link(rel='stylesheet' href='css/sales.css')
+.sidebar
+  h2 Mayondo Sales System
+  a(href='#') New Sale
+  a(href='#') Sales Report
+  a(href='#') view furniture stock
+  a(href='#') view wood stock
+
+.main-content
+  h1 Wood Sales Entry Form
+  p Fill in the sales details below:
+  if wooditems.length
+  form#salesform(action='/recordwoodSale', method='post')
+    label(for='customerName') Customer Name
+    input#customerName(type='text' name='customerName' required='')
+    label(for='productName') Name of Product
+    select#productName(type='text' name='productName' required='')
+      option(value='') Select a product 
+      - var groupedWoods = {}
+      each wood in wooditems 
+        - if (!groupedWoods[wood.woodName]) groupedWoods[wood.woodName]=0
+        - groupedWoods[wood.woodName] += wood.quantity
+      each qty, name in groupedWoods 
+        if qty > 0
+          option(value=name)= name + "(Available: " + qty + "units)"
+
+    label(for='quantity') Quantity Bought/Sold
+    input#quantity(type='number' name='quantity' min='1' required='')
+    label(for='price') price
+    input#price(type='text' name='price' required='')
+    label(for='date') Date
+    input#date(type='date' name='date' required='')
+    label(for='paymentType') Type of Payment
+    select#paymentType(name='paymentType' required='')
+      option(value='') Select payment type
+      option(value='cash') Cash
+      option(value='cheque') Cheque
+      option(value='bankOverdraft') Bank Overdraft
+
+    label(for='salesAgent') Sales Agent Name
+    input#salesAgent(type='text' name='salesAgent')
+    //- input#date(type='' name='transportProvidede' required='')
+    label(for='transport') Transport Provided
+    select#transport(name='transportProvided' required='')
+      option(value='') Select one 
+      option(value='Yes') Yes 
+      option(value='No') No
+      
+    label(for='notes') Additional Notes
+    textarea#notes(name='notes' rows='3' placeholder='Any additional information...')
+    button(type='submit') Submit Sale

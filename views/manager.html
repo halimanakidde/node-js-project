@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Manager Dashboard</title>
+  <link rel="stylesheet" href="/public/css/sty.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2><i class="fa-solid fa-chart-line"></i> Manager Panel</h2>
+      <ul>
+        <li><a href="#"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fa-solid fa-couch"></i> Furniture</a></li>
+        <li><a href="#"><i class="fa-solid fa-tree"></i> Wood Stock</a></li>
+        <li><a href="#"><i class="fa-solid fa-dollar-sign"></i> Sales</a></li>
+        <li><a href="#"><i class="fa-solid fa-user"></i> Agents</a></li>
+        <li><a href="#"><i class="fa-solid fa-file-invoice"></i> Reports</a></li>
+        <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Dashboard Cards -->
+    <h2>Manager Overview</h2>
+    <div class="dashboard">
+      <div class="card add-card">
+        <span>+ Add Card</span>
+      </div>
+
+      <div class="card mastercard">
+        <span>Mastercard</span>
+        <h2>$23,540.00</h2>
+        <p>**** 0004</p>
+      </div>
+
+      <div class="card visa-card">
+        <span>Visa</span>
+        <h2>$1,200.11</h2>
+        <p>**** 0192</p>
+      </div>
+
+      <div class="card profile-card">
+        <h3>Hey, Sandro</h3>
+        <span>Balance</span>
+        <h1>$23,540.00</h1>
+      </div>
+
+      <div class="card uploading-card">
+        <span>Uploading</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 35%;"></div>
+        </div>
+        <span>invoice.docx</span>
+      </div>
+
+      <div class="card invoice-info">
+        <h4>Invoice</h4>
+        <span>Max Mustermann</span>
+        <p>Server Installation</p>
+        <p>Quantity: 1, Unit Price: 100.00€</p>
+        <p>Subtotal: 1,450.00€</p>
+        <p>Date: 11:41 PM, Feb 24</p>
+        <!-- <button>Add Shipping</button> -->
+      </div>
+
+      <div class="card transactions-card">
+        <h4>Transactions</h4>
+        <table>
+          <tr>
+            <td>Sandro Tavartkiladze</td>
+            <td>$8,478.11</td>
+          </tr>
+          <tr>
+            <td>Max Mustermann</td>
+            <td>$3,900.50</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="card stats-card">
+        <h4>Portfolio</h4>
+        <h2>550.3k</h2>
+        <p>Finished Tasks: 330 | In Review: 27 | Failed: 0</p>
+      </div>
+
+      <div class="card profit-card">
+        <h4>Profit</h4>
+        <h2>58.3%</h2>
+        <span>Feb</span>
+      </div>
+
+      <div class="card debt-card">
+        <h4>Debt</h4>
+        <h2>22.0%</h2>
+        <span>Mar</span>
+      </div>
+
+      <div class="card bar-chart-card">
+        <h4>3 Recurring Payment</h4>
+        <span>Next Invoice 24 Dec</span>
+        <button>Details</button>
+      </div>
+
+      <div class="card graph-card">
+        <h4>$23,540.00 USD</h4>
+        <span>+12.5%</span>
+        <div class="mini-graph"></div>
+      </div>
+
+      <div class="card leads-card">
+        <h4>Leads</h4>
+        <h2>67.5%</h2>
+        <button>Details</button>
+      </div>
+
+      <div class="card archive-card">
+        <h4>Archives</h4>
+        <p>$20,000</p>
+        <p>Portfolio: $220,000</p>
+        <p>Market Price: $430,000</p>
+      </div>
+
+      <div class="card activity-card">
+        <h4>Activity</h4>
+        <div class="mini-bar"></div>
+        <p>-$2,019.00</p>
+      </div>
+
+      <div class="card invoices-card">
+        <h4>24 Invoices</h4>
+        <span>2 Pending, 3 Unpaid</span>
+        <div>3 Recurring Invoices <br> Next on December 24, 2020</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

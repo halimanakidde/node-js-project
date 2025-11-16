@@ -11,8 +11,8 @@ block content
     form#furnitureForm(action='/furnitureRegister' method='post'  enctype="multipart/form-data")
       h2 Furniture Stock Registration
       .form-row
-        label(for='itemName') Furniture Name
-        input#itemName(type='text' name='furnitureType' placeholder='e.g., Office Desk')
+        label(for='furniturename') Furniture Name
+        input#itemName(type='text' name='furniturename' placeholder='e.g., Office Desk')
         label(for='itemName') Furniture Image
         input#image(type='file' name='furnitureimage' placeholder='upload image')
         
@@ -40,8 +40,11 @@ block content
         label(for='quantity') Quantity
         input#quantity(type='number' name='quantity' min='1')
        
+        label(for='date') Date of Production
+        input#date(type='date' name='date' required='')
+
         label(for='price') Unit Price (UGX)
-        input#price(type='number' name='unitprice' min='1')
+        input#price(type='Number' name='unitprice' min='1')
        
         
         button(type='submit') Register Now

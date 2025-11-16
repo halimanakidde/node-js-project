@@ -9,7 +9,11 @@ html
     h2 Wood Register
     table.furnituretable
       tr
+        th Wood Name
         th Wood Type
+        th Wood Color 
+        th Measurements 
+        th Quality
         th Quantity
         th Unit Price
         th Supplier Name
@@ -18,7 +22,11 @@ html
       if wood.length > 0
         each item in wood
           tr
-            td #{item.woodtype}
+            td #{item.woodName}
+            td #{item.woodType}
+            td #{item.woodcolor}
+            td #{item.measurements}
+            td #{item.quality}
             td #{item.quantity}
             td #{item.unitprice}
             td #{item.supplier}

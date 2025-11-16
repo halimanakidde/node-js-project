@@ -1,0 +1,129 @@
+/* General Page Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Heading Section */
+.heading {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.heading h1 {
+  font-size: 2rem;
+  color: #1a4d2e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.paragraph1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.paragraph1 p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Form Container */
+#furnitureForm {
+  background-color: #fff;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Title */
+#furnitureForm h2 {
+  text-align: center;
+  color: #0a3d62;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+/* Layout for each row */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Label Styling */
+label {
+  flex: 1 1 40%;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input and Select Fields */
+input[type="text"],
+input[type="number"],
+select {
+  flex: 1 1 55%;
+  padding: 10px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #1a4d2e;
+  box-shadow: 0 0 5px rgba(26, 77, 46, 0.4);
+  background-color: #fff;
+}
+
+/* Submit Button */
+button[type='submit'] {
+  display: block;
+  width: 100%;
+  background-color: #1a4d2e;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type='submit']:hover {
+  background-color: #17643c;
+  transform: translateY(-2px);
+}
+
+button[type='submit']:active {
+  transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  label,
+  input,
+  select {
+    flex: 1 1 100%;
+  }
+
+  #furnitureForm {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Manager Dashboard
+    link(rel='stylesheet' href='css/manager.css')
+  body
+    .sidebar
+      .logo
+        h2 MAYONDO WOOD AND FURNITURE
+      .search-box
+        input(type='text' placeholder='Search...')
+        button Go
+      if currentUser && (currentUser.role == 'manager')
+        ul.nav-links
+          li
+            a(href='/') Home
+          li
+            a(href='/servicePage') Services
+          li
+              a(href='/furnitureRegister') Add Furniture Stock
+          li
+              a(href='/woodRegister') Add Wood Stock
+          li
+              a(href='/woodRegistered') Wood Records
+          li
+              a(href='/furnitureRegistered') Furniture Records
+          li
+              a(href='#') Sales Report
+          li
+              a(href='/logout') Logout
+              a(href='/login')
+        button.login-btn Login
+              a(href='/register')
+        button.signup-btn Signup
+    .main-content
+      .topbar
+        if !currentUser
+         
+block content

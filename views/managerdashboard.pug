@@ -1,78 +1,120 @@
-extends authlayout 
+extends managerlayout 
 block content
-head
-  title Manager Dashboard
-  link(rel='stylesheet' href='manager.css')
-    h2 Mayondo Furniture
-  // Main Content
+  head
+    title Manager Dashboard
+      link(rel='stylesheet' href='/public/css/manager.css')
+    // Main Content
   main.main-content
     header
       h1 Manager Dashboard
       p
         | Welcome back, 
         strong Manager
-    // Section 1: Summary Cards
-    section.cards
+        // Dashboard cards
+        .card-container
+          .card
+            h3 Total Expenses on Hardwood
+            p Total Expenses on Hardwood : #{new Intl.NumberFormat().format(totalHardwood.totalcost)} UGX
+          .card
+            h3 Total Expenses on Softwood
+            p Total Expenses on Softwood : #{new Intl.NumberFormat().format(totalSoftwood.totalcost)} UGX
+          .card
+            h3 Total Hardwood Stock
+            p Quantity of Hardwood in stock: #{totalHardwood.totalquantity} Pieces
+          .card
+            h3 Total Softwood Stock
+            p Quantity of Softwood in stock: #{totalSoftwood.totalquantity} Pieces
+          .card
+        
+            h3 wood Expenses
+            p #{new Intl.NumberFormat().format((totalHardwood.totalcost)+(totalSoftwood.totalcost)+(totalHardwood.totalquantity)+(totalSoftwood.totalquantity))}UGX
+          .card
+            h3 Wood Revenue
+            p #{new Intl.NumberFormat().format(woodExpenses)}
+          .card
+            i(class='fa-solid fa-couch icon')
+            h3 Total Revenue
+            p #{new Intl.NumberFormat().format(totalRevenue)}UGX
+
+          .card
+            i(class='fa-solid fa-tree icon')
+            h3 Total Profits
+            p #{new Intl.NumberFormat().format(grossProfit)}UGX
+
+          .card
+            i(class='fa-solid fa-hammer icon')
+            h3 Low Stock alerts
+            // Stock Alerts
+  .row.mb-4
+    .col-md-6
       .card
-        h3 Total Furniture Stock
-        p 124 items
-      .card
-        h3 Total Wood Stock
-        p 53 logs
-      .card
-        h3 Today&apos;s Sales
-        p UGX 2,450,000
-    // Section 2: Register Forms
-    section.register-section
-      h2 Register New Stock
-      .form-container
-        // Wood Registration Form
-        form#woodForm
-          h3 &#x1F332; Register Wood Stock
-          label Wood Type:
-          input(type='text' placeholder='e.g. Mahogany' required='')
-          label Quantity (Logs):
-          input(type='number' placeholder='e.g. 10' required='')
-          label Price Per Unit:
-          input(type='text' placeholder='e.g.5000 UGX' required='')
-          label Date Received:
-          input(type='date' required='')
-          button(type='submit') Save Wood Stock
-        // Furniture Registration Form
-        form#furnitureForm
-          h3 &#x1FA91; Register Furniture Stock
-          label Furniture Type:
-          input(type='text' placeholder='e.g. Office Chair' required='')
-          label Quantity:
-          input(type='number' placeholder='e.g. 5' required='')
-          label Date Produced:
-          input(type='date' required='')
-          button(type='submit') Save Furniture Stock
-    // Section 3: Sales Monitoring Table
-    section.sales-section
-      h2 &#x1F4CA; Monitor Sales (Who Sold What, When)
-      table
-        thead
-          tr
-            th Date
-            th Sales Executive
-            th Item Sold
-            th Quantity
-            th Amount (UGX)
-            th Customer
-        tbody
-          tr
-            td 2025-10-30
-            td Jane A.
-            td Wooden Bed
-            td 1
-            td 1,200,000
-            td Mr. Owor
-          tr
-            td 2025-10-29
-            td Samuel K.
-            td Office Desk
-            td 2
-            td 1,500,000
-            td ABC Limited
-script(src='manager-dashboard.js')
+        .card-header.bg-danger.text-white
+          h5.mb-0
+            i.fas.fa-exclamation-triangle.me-2
+            | Low Stock Alerts
+        .card-body
+          if lowWoodstock.length > 0 || lowFurniturestock.length > 0
+            if lowWoodstock.length > 0
+              h6.text-danger Wood Stock (< 10 units):
+              ul.list-group.list-group-flush.mb-3
+                each item in lowWoodstock
+                  li.list-group-item.d-flex.justify-content-between.align-items-center
+                    div
+                      strong= item.woodName
+                      br
+                      small.text-muted= item.woodType
+                    span.badge.bg-danger= item.quantity + ' units'
+
+              if lowFurniturestock.length > 0
+                h6.text-danger Furniture Stock (< 10 units):
+                ul.list-group.list-group-flush
+                  each item in lowFurniturestock
+                    li.list-group-item.d-flex.justify-content-between.align-items-center
+                      div
+                        strong= item.name
+                        br
+                        small.text-muted= item.type
+                      span.badge.bg-danger= item.quantity + ' units'
+          else
+            .text-center.text-success
+            i.fas.fa-check-circle.fa-3x.mb-2
+            h6 All Stock Levels Good!
+            p.text-muted No low stock alerts at this time.
+
+          .card
+            i(class='fa-solid fa-leaf icon')
+            h3 Soft Wood Stock
+            p 160 Logs
+          .card
+            i(class='fa-solid fa-leaf icon')
+            h3 Soft Wood Stock
+            p 160 Logs
+
+        // Who Sold What Section
+        .sales-summary
+          h2 Who Sold What
+          table
+            thead
+              tr
+                th Sales Agent
+                th Item Sold
+                th Quantity
+                th Date
+            tbody
+              tr
+                td John Doe
+                td Office Desk
+                td 4
+                td 2025-11-03
+              tr
+                td Mary Namatovu
+                td Mahogany Wood
+                td 15 Logs
+                td 2025-11-04
+              tr
+                td Isaac Kintu
+                td Sofa Set
+                td 2
+                td 2025-11-05
+                
+//- script(src='manager-dashboard.js')

@@ -1,11 +1,16 @@
 const express=require("express");
 const router=express.Router();
 const passport= require('passport')
+const {ensureAuthenticated, ensureManager, ensureSalesExecutive} = require("../customMiddleware/auth");
 
 const Registration=require('../models/Registration')
+const woodsale=require('../models/woodsale')
+const furnitureStock=require('../models/Furniturestock')
+const furnitureSale=require('../models/furnituresale');
+const WoodStock = require("../models/Woodstock");
 
 router.get('/register', (req, res) => {
-    res.render('signup')//rendering home.pug file
+    res.render('signup')//rendering signup.pug file
 });
 
 //signup route
@@ -70,6 +75,85 @@ router.get("/users", async(req,res)=>{
     }
 });
 
+ router.get('/managerDashboard', async (req,res)=>{
+    try {
+      //expenses for buying wood stock  
+      let totalHardwood = await WoodStock.aggregate([
+        {$match:{woodType:'hardwood'}},
+        {$group:{_id:null,
+           totalquantity:{$sum:'$quantity'},
+           totalcost:{$sum:{$multiply:['$unitprice','$quantity']}}
+        }}
+      ]) 
+       let totalSoftwood = await WoodStock.aggregate([
+        {$match:{woodType:'softwood'}},
+        {$group:{_id:null,
+           totalquantity:{$sum:'$quantity'},
+           totalcost:{$sum:{$multiply:['$unitprice','$quantity']}}
+        }}
+      ]) 
+       let totalTimber = await WoodStock.aggregate([
+        {$match:{woodType:'timber'}},
+        {$group:{_id:null,
+           totalquantity:{$sum:'$quantity'},
+           totalcost:{$sum:{$multiply:['$unitprice','$quantity']}}
+        }}
+      ]) 
+       let totalPoles = await WoodStock.aggregate([
+        {$match:{woodType:'poles'}},
+        {$group:{_id:null,
+           totalquantity:{$sum:'$quantity'},
+           totalcost:{$sum:{$multiply:['$unitprice','$quantity']}}
+        }}
+      ]) 
+    totalHardwood = totalHardwood[0]??{totalquantity:0, totalcost:0}
+    totalSoftwood = totalSoftwood[0]??{totalquantity:0, totalcost:0}
+    totalSoftwood = totalTimber[0]??{totalquantity:0, totalcost:0}
+    totalPoles = totalPoles[0]??{totalquantity:0, totalcost:0}
+    
+   //get all sales
+    const woodsales = await woodsale.find().populate('salesAgent','fullname')
+    const furnitureSales = await furnitureSale.find().populate('salesAgent','fullname')
+    const totalSales = woodsales.length + furnitureSales.length
+    //get all stock
+    const furnitureStocks = await furnitureStock.find()
+    const woodstocks = await WoodStock.find()
+    
+    //calculate revenue
+    const woodRevenue = woodsales.reduce((sum,sale)=>sum + sale.totalprice,0)
+    const furnitureRevenue = furnitureSales.reduce((sum,sale)=>sum + sale.totalprice,0)
+    const totalRevenue = woodRevenue + furnitureRevenue
+    
+    //calculate expenses(from purchase of woodstock)
+    const woodExpenses = woodstocks.reduce((sum,stock)=>sum +(stock.unitprice*stock.quantity),0)
+      
+    //calculate profit
+    const grossProfit = totalRevenue - woodExpenses;
+    //Low stock alerts
+    const lowWoodstock = woodstocks.filter(stock=>stock.quantity < 10);
+    const lowFurniturestock = furnitureStocks.filter(stock=>stock.quantity < 10);
+    res.render("managerdashboard",{
+        totalHardwood,
+        totalSoftwood,
+        totalTimber,
+        totalPoles,
+        woodExpenses,
+        grossProfit,
+        furnitureStocks,
+        totalSales,
+        lowWoodstock,
+        lowFurniturestock,
+        totalRevenue
+    });
+      
+        } catch (error) {
+
+        }
+ });
+
+ router.get('/salesDashboard', (req,res)=>{
+    res.render("salesdashboard")
+ });
 //last line
 module.exports=router;
 //always import your route file into the server file

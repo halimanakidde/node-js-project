@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Form with Sidebar</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #f4f6f9;
+  }
+
+  /* Sidebar styles */
+  .sidebar {
+    width: 220px;
+    background-color: #1e3a8a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.3em;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    display: block;
+    transition: background 0.3s;
+  }
+
+  .sidebar a:hover {
+    background-color: #3b82f6;
+  }
+
+  /* Main content styles */
+  .main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+  }
+
+  h1 {
+    color: #1e3a8a;
+    margin-bottom: 10px;
+  }
+
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 800px;
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  button {
+    margin-top: 20px;
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #3b82f6;
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Sales System</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">New Sale</a>
+    <a href="#">Sales Report</a>
+    <a href="#">Customers</a>
+    <a href="#">Products</a>
+    <a href="#">Settings</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Sales Entry Form</h1>
+    <p>Fill in the sales details below:</p>
+
+    <form>
+      <label for="customerName">Customer Name</label>
+      <input type="text" id="customerName" name="customerName" required>
+
+      <label for="productType">Type of Product</label>
+      <input type="text" id="productType" name="productType" required>
+
+      <label for="productName">Name of Product</label>
+      <input type="text" id="productName" name="productName" required>
+
+      <label for="quantity">Quantity Bought/Sold</label>
+      <input type="number" id="quantity" name="quantity" min="1" required>
+
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="paymentType">Type of Payment</label>
+      <select id="paymentType" name="paymentType" required>
+        <option value="">Select payment type</option>
+        <option value="cash">Cash</option>
+        <option value="cheque">Cheque</option>
+        <option value="bankOverdraft">Bank Overdraft</option>
+      </select>
+
+      <label for="salesAgent">Sales Agent Name</label>
+      <input type="text" id="salesAgent" name="salesAgent">
+
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" name="notes" rows="3" placeholder="Any additional information..."></textarea>
+
+      <button type="submit">Submit Sale</button>
+    </form>
+  </div>
+
+</body>
+</html>
